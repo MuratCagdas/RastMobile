@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="Maindiv container-fluid-xxl g-0">
+  <dx-data-grid id="gridContainer" [dataSource]="dataSource" [hoverStateEnabled]="true"
+    (onRowInserted)="addItem($event)" [showBorders]="true" [showColumnLines]="true" [width]="'100%'"
+    [columnHidingEnabled]="true">
+    <dxo-editing mode="popup" [allowAdding]="true">
+      <dxo-popup [width]="488" [height]="406">
+      </dxo-popup>
+      <dxo-form>
+        <dxi-item itemType="group" [colCount]="1" [colSpan]="6">
+          <dxi-item dataField="link" caption="Sosyal Medya linki" dataType="string"></dxi-item>
+          <dxi-item dataField="name" caption="Sosyal Medya Adı" dataType="string"></dxi-item>
+          <dxi-item dataField="explanation" caption="Açıklama" dataType="string"></dxi-item>
+        </dxi-item>
+      </dxo-form>
+    </dxo-editing>
+    <dxi-column dataField="link" caption="Sosyal Medya linki" dataType="string">
+    </dxi-column>
+    <dxi-column dataField="name" caption="Sosyal Medya Adı" dataType="string">
+    </dxi-column>
+    <dxi-column dataField="explanation" caption="Açıklama" dataType="string">
+    </dxi-column>
+    <dxo-paging [(pageSize)]="MaxPageSize" id="pageSize"> </dxo-paging>
+    <dxo-pager displayMode="compact" [showPageSizeSelector]="true" [allowedPageSizes]="allowedPageSizes"
+      [showNavigationButtons]="true" [showInfo]="true" infoText="show:" visible="true"></dxo-pager>
+    <dxo-search-panel [visible]="true" [highlightCaseSensitive]="true"></dxo-search-panel>
+  </dx-data-grid>
+
+</div>
